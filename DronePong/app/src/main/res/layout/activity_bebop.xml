@@ -1,0 +1,336 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BebopActivity"
+    android:id="@+id/piloting_view">
+
+    <com.parrot.sdksample.view.BebopVideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <ImageView
+        android:id="@+id/camera_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency"
+        android:id="@+id/emergencyBt"
+        android:width="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take picture"
+        android:id="@+id/takePictureBt"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:width="150dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PlayOrPauseBtn"
+        android:width="150dp"
+        android:text="play"
+        android:layout_above="@+id/emergencyBt"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:text="bounce"
+        android:padding="10dp"
+        android:id="@+id/yawRightBt"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:text="left"
+        android:id="@+id/rollLeftBt"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:width="50dp"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:text="left"
+        android:id="@+id/yawLeftBt"
+        android:layout_below="@+id/gazUpBt"
+        android:layout_toLeftOf="@+id/gazUpBt"
+        android:layout_toStartOf="@+id/gazUpBt"
+        android:visibility="gone"/>
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:text="right"
+        android:id="@+id/rollRightBt"
+        android:width="20dp"
+        android:layout_above="@+id/backBt"
+        android:layout_toRightOf="@+id/backBt"
+        android:layout_toEndOf="@+id/backBt"
+        android:visibility="gone"/>
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="up"
+        android:id="@+id/gazUpBt"
+        android:layout_above="@+id/yawRightBt"
+        android:layout_toLeftOf="@+id/yawRightBt"
+        android:layout_toStartOf="@+id/yawRightBt"
+        android:width="110dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="down"
+        android:id="@+id/gazDownBt"
+        android:width="110dp"
+        android:layout_below="@+id/yawRightBt"
+        android:layout_toRightOf="@+id/yawLeftBt"
+        android:layout_toEndOf="@+id/yawLeftBt"
+        android:visibility="gone"/>
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="forward"
+        android:id="@+id/forwardBt"
+        android:width="110dp"
+
+        android:layout_alignTop="@+id/PlayOrPauseBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="gone"/>
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:id="@+id/backBt"
+        android:layout_below="@+id/rollLeftBt"
+        android:layout_toRightOf="@+id/rollLeftBt"
+        android:layout_toEndOf="@+id/rollLeftBt"
+        android:width="110dp"
+        android:visibility="gone"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download"
+        android:id="@+id/downloadBt"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:width="150dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Battery: "
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#ff0000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="XXX%"
+        android:id="@+id/batteryLabel"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:textColor="#ff0000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Wall angle: "
+        android:id="@+id/angleLabel"
+        android:textColor="#ff0000"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_alignEnd="@+id/textView4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="XXX%"
+        android:id="@+id/angleText"
+        android:textColor="#ff0000"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4" />
+
+    <TextView
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="roll"
+        android:id="@+id/textView2"
+        android:width="50dp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_alignBaseline="@+id/PlayOrPauseBtn"
+        android:layout_alignBottom="@+id/PlayOrPauseBtn"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="yaw"
+        android:id="@+id/textView3"
+        android:width="50dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/forwardBt"
+        android:layout_toRightOf="@+id/turnLabel"
+        android:layout_toEndOf="@+id/turnLabel"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Turn Angle:"
+        android:id="@+id/turnLabel"
+        android:textColor="#ff0000"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/turnText"
+        android:layout_toStartOf="@+id/turnText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="XXX%"
+        android:id="@+id/turnText"
+        android:textColor="#ff0000"
+        android:layout_below="@+id/takePictureBt"
+        android:layout_alignRight="@+id/yawRightBt"
+        android:layout_alignEnd="@+id/yawRightBt" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0"
+        android:textSize="80dp"
+        android:textColor="#ff0000"
+        android:id="@+id/Player1_Score"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/PlayOrPauseBtn"
+        android:layout_toStartOf="@+id/PlayOrPauseBtn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0"
+        android:textSize="80dp"
+        android:textColor="#226EDF"
+        android:id="@+id/Player2_Score"
+        android:layout_alignTop="@+id/Player1_Score"
+        android:layout_toRightOf="@+id/PlayOrPauseBtn"
+        android:layout_toEndOf="@+id/PlayOrPauseBtn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="80dp"
+        android:id="@+id/textView4"
+        android:textColor="#FFFFFF"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player 1"
+        android:id="@+id/Player1"
+        android:layout_above="@+id/Player1_Score"
+        android:layout_alignLeft="@+id/Player1_Score"
+        android:layout_alignStart="@+id/Player1_Score" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player 2"
+        android:id="@+id/Player2"
+        android:layout_alignTop="@+id/Player1"
+        android:layout_alignLeft="@+id/Player2_Score"
+        android:layout_alignStart="@+id/Player2_Score" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP"
+        android:id="@+id/stopButton"
+        android:layout_alignTop="@+id/emergencyBt"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-1"
+        android:id="@+id/minus2"
+        android:layout_below="@+id/Player2"
+        android:layout_alignEnd="@+id/turnText"
+        android:layout_marginEnd="22dp"
+        android:onClick="onMinus2Click"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        android:id="@+id/plus2"
+        android:layout_below="@+id/minus2"
+        android:layout_alignStart="@+id/minus2"
+        android:onClick="onPlus2Click"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-1"
+        android:id="@+id/minus1"
+        android:layout_above="@+id/plus2"
+        android:onClick="onMinus1Click"
+        android:layout_alignEnd="@+id/batteryLabel" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        android:id="@+id/plus1"
+        android:layout_marginRight="23dp"
+        android:layout_alignBottom="@+id/Player1_Score"
+        android:layout_alignStart="@+id/minus1"
+        android:onClick="onPlus1Click"/>
+</RelativeLayout>
